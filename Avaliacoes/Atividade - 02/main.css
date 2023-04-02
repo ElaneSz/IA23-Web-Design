@@ -1,0 +1,57 @@
+html, body {
+    margin: 0;
+}
+  
+body {
+    background-color: rgba(238, 164, 216, 0.589);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+  
+main {
+    border: 3px solid rgba(121, 62, 121, 0.712);
+    background-color: rgb(163, 114, 163);
+    width: 60vw;
+    border-radius: 20px;
+    padding: 20px;
+    border-style: groove;
+}
+
+.medusa {
+    width: 10vw;
+    height: 10vw;
+}
+
+.texto {
+    margin-top: 10px;
+}
+  
+main div {
+    display: flex;
+}
+  
+main div input {
+    flex-grow: 1;
+    height: 25px;
+}
+
+.n2 {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+  
+main div button,
+main div input {
+    border: 0 none;
+    outline: none;
+    cursor: pointer;
+}
+  
+main div button:focus,
+main div input:focus {
+    background-color: rgb(191, 146, 233);
+    color: #FFFFFF;
+}
+  

@@ -1,0 +1,59 @@
+body {
+    width: 750px;
+    margin: 20px auto;
+    background-color: rgb(141, 108, 172);
+}
+
+header {
+    border: 2px solid rgb(199, 160, 236);
+    background-color: rgb(255, 255, 255);
+    display: inline-block;
+    transition: 3s;
+}
+
+header:hover {
+    background-color: rgb(220, 209, 230);
+}
+
+.imagem-principal {
+    border: 3px solid rgb(159, 109, 206);
+    height: 20vw;
+    width: 20vw;
+    border-radius: 50px;
+    border-style: ridge;
+    float: left;
+    margin: 10px 10px;
+}
+
+.biografia {
+    margin: 10px 10px;
+}
+
+.imagens-diversificadas {
+    background-color: rgb(226, 210, 241);
+    border: 3px solid rgb(199, 160, 236);
+    border-style: groove;
+    transition: 3s;
+}
+
+.imagens-diversificadas:hover {
+    background-color: rgb(188, 144, 230);
+}
+
+.nome {
+    margin-left: 21vw;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin: auto 10px;
+}
+
+.item {
+    width: 13vw;
+    height: 13vw;
+    border-radius: 5px;
+}
