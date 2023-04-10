@@ -1,0 +1,95 @@
+/* grid (estrutura em tabela) vs flex (as coisas se esticam) */
+
+.test {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /*Tamanho que irá ocupar*/
+    border: 2px solid rgb(255, 0, 200);
+    padding: 10px;
+    gap: 10px; /*Espaço entre as coisas*/
+    margin-bottom: 10px;
+}
+
+.test > div {
+    background-color: rgb(169, 115, 173);
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* transition */
+
+.test-transition > div {
+    transition: .3s background;
+}
+
+.test-transition > div:hover {
+    background-color: rgb(154, 85, 172);
+}
+
+/* animation */
+
+@keyframes corzinhas {
+    50% {
+        background-color: rgb(209, 112, 212);
+    }
+
+    100% {
+        background-color: blueviolet;
+    }
+}
+
+.test-transition div:hover {
+    animation: corzinhas 3s infinite; /*ease | tempo de transição*/
+}
+
+
+/**/
+
+nav {
+    border: 2px solid rgb(124, 72, 124);
+    background-color: rgb(222, 192, 250);
+    border-radius: 5px;
+}
+
+nav :is(ul, li) { /*':is' para não repetir as mesmas coisas*/
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    padding: 5px;
+    transition: .3s;
+}
+
+nav li:hover {
+    background-color: rgba(255, 255, 255, .5);
+}
+
+nav li a {
+    text-decoration: none;
+    color: black;
+}
+
+nav li a:active {
+    color: blue;
+}
+
+nav li a:visited {
+    color: rgb(31, 31, 95);
+}
+
+nav > ul {
+    position: absolute;
+}
+
+nav ul > li > ul {
+    position: absolute;
+    background-color: black;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+}
