@@ -22,11 +22,16 @@ header:hover {
     border-radius: 50px;
     border-style: ridge;
     float: left;
-    margin: 10px 10px;
+    margin: 30px 20px 0 20px;
 }
 
 .biografia {
     margin: 10px 10px;
+}
+
+.biografia p {
+    text-align: justify;
+    text-indent: 20px;
 }
 
 .imagens-diversificadas {
