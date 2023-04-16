@@ -3,7 +3,7 @@
 .test {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; /*Tamanho que irá ocupar*/
-    border: 2px solid rgb(255, 0, 200);
+    border: 2px solid rgb(124, 72, 124);
     padding: 10px;
     gap: 10px; /*Espaço entre as coisas*/
     margin-bottom: 10px;
@@ -25,23 +25,23 @@
 }
 
 .test-transition > div:hover {
-    background-color: rgb(154, 85, 172);
+    background-color: rgb(85, 172, 85);
 }
 
 /* animation */
 
 @keyframes corzinhas {
     50% {
-        background-color: rgb(209, 112, 212);
+        background-color: rgb(0, 0, 0);
     }
 
     100% {
-        background-color: blueviolet;
+        background-color: rgb(43, 226, 89);
     }
 }
 
-.test-transition div:hover {
-    animation: corzinhas 3s infinite; /*ease | tempo de transição*/
+.test-animation div:hover {
+    animation: corzinhas 3s linear infinite; /*ease | tempo de transição*/
 }
 
 
@@ -79,17 +79,32 @@ nav li a:active {
 }
 
 nav li a:visited {
-    color: rgb(31, 31, 95);
+    color: rgb(255, 255, 255);
 }
 
 nav > ul {
-    position: absolute;
+    position: relative;
 }
 
 nav ul > li > ul {
     position: absolute;
-    background-color: black;
+    background-color: rgb(212, 192, 192);
     visibility: hidden;
     opacity: 0;
     transition: .3s;
+    display: grid;
+}
+
+nav ul > li:hover > ul {
+    visibility: visible;
+    opacity: 1;
+    grid-template-columns: repeat(1,1fr);
+}
+  
+nav ul > li:has(ul)::after {
+    content: "+";
+}
+
+nav ul > li > ul a:visited {
+    color: rgb(185, 56, 56);
 }
