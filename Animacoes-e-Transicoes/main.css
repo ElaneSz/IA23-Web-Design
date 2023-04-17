@@ -1,11 +1,11 @@
 /* grid (estrutura em tabela) vs flex (as coisas se esticam) */
 
-.test {
+/*.test {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /*Tamanho que irá ocupar*/
+    grid-template-columns: 1fr 1fr 1fr; /*Tamanho que irá ocupar
     border: 2px solid rgb(124, 72, 124);
     padding: 10px;
-    gap: 10px; /*Espaço entre as coisas*/
+    gap: 10px; /*Espaço entre as coisas
     margin-bottom: 10px;
 }
 
@@ -18,7 +18,7 @@
     cursor: pointer;
 }
 
-/* transition */
+/* transition 
 
 .test-transition > div {
     transition: .3s background;
@@ -28,7 +28,7 @@
     background-color: rgb(85, 172, 85);
 }
 
-/* animation */
+/* animation 
 
 @keyframes corzinhas {
     50% {
@@ -41,11 +41,11 @@
 }
 
 .test-animation div:hover {
-    animation: corzinhas 3s linear infinite; /*ease | tempo de transição*/
-}
+    animation: corzinhas 3s linear infinite; /*ease | tempo de transição
+}*/
 
 
-/**/
+/* Menu */
 
 nav {
     border: 2px solid rgb(124, 72, 124);
@@ -53,7 +53,30 @@ nav {
     border-radius: 5px;
 }
 
-nav :is(ul, li) { /*':is' para não repetir as mesmas coisas*/
+nav > ul {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+nav > ul >li {
+    background-color: blueviolet;
+    list-style: none;
+    border: 2px solid green;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+nav > ul > li > ul {
+    display: none;
+}
+
+nav > ul > li:hover > ul {
+    display: block;
+}
+
+/*nav :is(ul, li) { /*':is' para não repetir as mesmas coisas
     list-style: none;
     margin: 0;
     padding: 0;
@@ -86,7 +109,7 @@ nav > ul {
     position: relative;
 }
 
-nav ul > li > ul {
+nav > ul > li > ul {
     position: absolute;
     background-color: rgb(212, 192, 192);
     visibility: hidden;
@@ -95,16 +118,16 @@ nav ul > li > ul {
     display: grid;
 }
 
-nav ul > li:hover > ul {
+nav > ul > li:hover > ul {
     visibility: visible;
     opacity: 1;
     grid-template-columns: repeat(1,1fr);
 }
   
-nav ul > li:has(ul)::after {
+nav > ul > li:has(ul)::after {
     content: "+";
 }
 
-nav ul > li > ul a:visited {
+nav > ul > li > ul a:visited {
     color: rgb(185, 56, 56);
-}
+}*/
