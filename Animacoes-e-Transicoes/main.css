@@ -1,14 +1,23 @@
 /* Menu */
+/*Refatorar | Refazer algumas coisas*/
+:root {
+    --nav-background: #6c6cb3;
+    --nav-border: .5rem #2c2c54;
+}
 
 body {
     background-color: rgb(227, 213, 240);
 }
 
 nav {
-    border: 2px solid rgb(124, 72, 124);
-    background-color: rgb(222, 192, 250);
+    border: 2px solid var(--nav-border);
+    background-color: var(--nav-background);
     border-radius: 5px;
     border-style: double;
+    font-size: 1rem; /*'em' especifa para fontes | Tamanho relativo*/
+    display: flex;
+    justify-content: space-between; /*Coloca um no inicio e outro no fim | Coloca espaço entre os itens*/
+    align-items: center;
 }
 
 nav > ul {
@@ -17,7 +26,66 @@ nav > ul {
     padding: 10px;
 }
 
-nav > ul >li {
+nav > ul > li:hover > ul {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    padding: 5px;
+    transition: .3s;
+}
+
+nav li a {
+    text-decoration: none;
+    color: black;
+}
+
+nav li a:active {
+    color: blue;
+}
+
+nav li a:visited {
+    color: rgb(255, 255, 255);
+}
+
+nav > ul > li {
+    position: relative;
+}
+
+nav > ul > li > ul {
+    position: absolute;
+    background-color: rgb(212, 192, 192);
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+    display: grid;
+}
+
+nav > ul > li:hover > ul {
+    visibility: visible;
+    opacity: 1;
+    grid-template-columns: repeat(1,1fr);
+}
+  
+nav > ul > li:has(ul)::after {
+    content: "+";
+}
+
+nav > ul > li > ul a:visited {
+    color: rgb(185, 56, 56);
+}
+
+
+.medusa {
+    height: 5vw;
+}
+
+
+/*nav > ul >li {
     
     list-style: none;
     border: 2px solid rgb(120, 26, 167);
@@ -39,10 +107,10 @@ nav > ul > li:hover > ul {
 }
 
 nav > ul > li > ul a {
-    text-decoration: aliceblue; /*Tirar sublinhado*/
+    text-decoration: aliceblue; /*Tirar sublinhado
     color: black;
     padding: 15px;
-}
+}*/
 
 /* grid (estrutura em tabela) vs flex (as coisas se esticam) */
 
@@ -119,7 +187,7 @@ nav li a:visited {
     color: rgb(255, 255, 255);
 }
 
-nav > ul {
+nav > ul > li {
     position: relative;
 }
 
