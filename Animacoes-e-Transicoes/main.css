@@ -22,12 +22,12 @@ nav {
 
 nav > ul {
     display: flex;
-    gap: 10px;
+    gap: 10px; /*Defina o espaço entre as linhas e entre as colunas*/
     padding: 10px;
 }
 
 nav > ul > li:hover > ul {
-    display: block;
+    display: flexbox;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -45,7 +45,7 @@ nav li a {
 }
 
 nav li a:active {
-    color: blue;
+    color: rgb(53, 53, 160);
 }
 
 nav li a:visited {
@@ -72,7 +72,7 @@ nav > ul > li:hover > ul {
 }
   
 nav > ul > li:has(ul)::after {
-    content: "+";
+    content: "◐";
 }
 
 nav > ul > li > ul a:visited {
