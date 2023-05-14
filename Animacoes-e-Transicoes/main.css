@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 /* Menu */
 /*Refatorar | Refazer algumas coisas*/
 :root {
@@ -6,7 +7,8 @@
 }
 
 body {
-    background-color: rgb(227, 213, 240);
+    background-color: rgb(255, 255, 255);
+    font-family: 'Roboto', sans-serif;
 }
 
 nav {
@@ -18,19 +20,13 @@ nav {
     display: flex;
     justify-content: space-between; /*Coloca um no inicio e outro no fim | Coloca espaço entre os itens*/
     align-items: center;
+    box-shadow: 0 0 7em rgb(113, 60, 156);
 }
 
 nav > ul {
     display: flex;
     gap: 10px; /*Defina o espaço entre as linhas e entre as colunas*/
     padding: 10px;
-}
-
-nav > ul > li:hover > ul {
-    display: flexbox;
-    list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 nav li {
@@ -62,13 +58,18 @@ nav > ul > li > ul {
     visibility: hidden;
     opacity: 0;
     transition: .3s;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    
 }
 
 nav > ul > li:hover > ul {
     visibility: visible;
     opacity: 1;
-    grid-template-columns: repeat(1,1fr);
+    /*grid-template-columns: repeat(1,1fr);*/
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
   
 nav > ul > li:has(ul)::after {
