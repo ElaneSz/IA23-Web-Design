@@ -1,5 +1,7 @@
+/*Grid | Grade que dividide as 'divs' em partes iguais por padrão
+  Flex | Ele coloca os filhos um ao lado do outro*/
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-/* Menu */
 /*Refatorar | Refazer algumas coisas*/
 :root {
     --nav-background: #6c6cb3;
@@ -85,132 +87,35 @@ nav > ul > li > ul a:visited {
     height: 5vw;
 }
 
-
-/*nav > ul >li {
-    
-    list-style: none;
-    border: 2px solid rgb(120, 26, 167);
-    border-style: outset;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
+main {
+    border: 2px solid black;
+    padding: 1em;
 }
 
-nav > ul > li > ul {
-    display: none;
-}
-
-nav > ul > li:hover > ul {
-    display: block;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav > ul > li > ul a {
-    text-decoration: aliceblue; /*Tirar sublinhado
-    color: black;
-    padding: 15px;
-}*/
-
-/* grid (estrutura em tabela) vs flex (as coisas se esticam) */
-
-/*.test {
+div.galeria {
+    border: 5px solid lightseagreen;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /*Tamanho que irá ocupar
-    border: 2px solid rgb(124, 72, 124);
-    padding: 10px;
-    gap: 10px; /*Espaço entre as coisas
-    margin-bottom: 10px;
+    grid-template-columns: repeat(5, 1fr); /*repeat(5 | quantidade de repetições, 1fr | Tamanho)*/
+    grid-template-rows: repeat(4, 400px); /*Pro tamanho*/
+    gap: 2rem;
 }
 
-.test > div {
-    background-color: rgb(169, 115, 173);
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+div.galeria > div {
+    background-color: #6c6cb3;
 }
 
-/* transition 
-
-.test-transition > div {
-    transition: .3s background;
+div.galeria >:nth-child(1) {
+    background-color: blue;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
 }
 
-.test-transition > div:hover {
-    background-color: rgb(85, 172, 85);
+div.galeria >:nth-child(3) {
+    background-color: rgb(255, 0, 0);
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
-
-/* animation 
-
-@keyframes corzinhas {
-    50% {
-        background-color: rgb(0, 0, 0);
-    }
-
-    100% {
-        background-color: rgb(43, 226, 89);
-    }
-}
-
-.test-animation div:hover {
-    animation: corzinhas 3s linear infinite; /*ease | tempo de transição
-}*/
-
-/*nav :is(ul, li) { /*':is' para não repetir as mesmas coisas
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav li {
-    display: inline-block;
-    padding: 5px;
-    transition: .3s;
-}
-
-nav li:hover {
-    background-color: rgba(255, 255, 255, .5);
-}
-
-nav li a {
-    text-decoration: none;
-    color: black;
-}
-
-nav li a:active {
-    color: blue;
-}
-
-nav li a:visited {
-    color: rgb(255, 255, 255);
-}
-
-nav > ul > li {
-    position: relative;
-}
-
-nav > ul > li > ul {
-    position: absolute;
-    background-color: rgb(212, 192, 192);
-    visibility: hidden;
-    opacity: 0;
-    transition: .3s;
-    display: grid;
-}
-
-nav > ul > li:hover > ul {
-    visibility: visible;
-    opacity: 1;
-    grid-template-columns: repeat(1,1fr);
-}
-  
-nav > ul > li:has(ul)::after {
-    content: "+";
-}
-
-nav > ul > li > ul a:visited {
-    color: rgb(185, 56, 56);
-}*/
