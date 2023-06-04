@@ -96,7 +96,7 @@ div.galeria {
     border: 5px solid lightseagreen;
     display: grid;
     grid-template-columns: repeat(5, 1fr); /*repeat(5 | quantidade de repetições, 1fr | Tamanho)*/
-    grid-template-rows: repeat(4, 400px); /*Pro tamanho*/
+    grid-template-rows: repeat(3, 400px); /*Pro tamanho*/
     gap: 2rem;
 }
 
