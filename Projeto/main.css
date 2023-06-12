@@ -1,1 +1,73 @@
 /*'vmin' | Pega da menor proporção*/
+body {
+    box-sizing: border-box;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+div.genius {
+    background-color: black;
+    width: 80vmin;
+    height: 80vmin;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 1rem;
+    gap: 1rem;
+    border-radius: 50%;
+    position: relative;
+}
+
+div.genius> *:not(.pontuacao){ /*Filhos diretos, menos o '.pontuacao'*/
+    cursor: pointer;
+}
+  
+div.genius> :nth-child(1) { /*Primeiro filho direto*/
+    border-radius: 100% 0 0 0;
+    background-color: rgb(2, 196, 2);
+}
+
+div.genius> :nth-child(1).on,
+div.genius> :nth-child(1):hover { /*Quando clicar no verde*/
+    background-color: green;
+}
+  
+  div.genius> :nth-child(2) {
+    border-radius: 0 100% 0 0;
+    background-color: rgb(161, 0, 0);
+}
+
+div.genius> :nth-child(2).on,
+div.genius> :nth-child(2):hover {
+    background-color: red;
+}
+  
+div.genius> :nth-child(3) {
+    border-radius: 0 0 0 100%;
+    background-color: rgb(184, 184, 28);
+}
+    
+div.genius> :nth-child(3).on,
+div.genius> :nth-child(3):hover {
+    background-color: yellow;
+}
+  
+div.genius> :nth-child(4) {
+    border-radius: 0 0 100% 0;
+    background-color: rgb(4, 4, 143);
+}
+    
+div.genius> :nth-child(4).on,
+div.genius> :nth-child(4):hover {
+    background-color: blue;
+}
+  
+div.pontuacao {
+    background-color: black;
+    position: absolute;
+    inset: 30%;
+    border-radius: 50%;
+}
