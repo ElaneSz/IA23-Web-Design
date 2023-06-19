@@ -52,7 +52,7 @@ div.genius> :nth-child(3) {
     
 div.genius> :nth-child(3).on,
 div.genius> :nth-child(3):hover {
-    background-color: yellow;
+    background-color: rgb(228, 228, 93);
 }
   
 div.genius> :nth-child(4) {
