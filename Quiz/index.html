@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset='utf-8'>
-  <title>Quiz: Nove verdade, uma mentira!</title>
+  <title>Quiz | Medusa</title>
+  <link rel="icon" type="png" href="medusa.png">
   <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
   <script defer async src='main.js'></script>
 </head>
+
 <body>
-  <main>
-    <h1 class="pergunta"></h1>
-    <div class="alternativas">
+  <div class="conteudo">
+    <div class="quiz">
+      <div class="cont-pergunta">
+        <h1 class="pergunta"></h1>
+      </div>
+      <div class="alternativas"></div>
+      <div class="contador">
+        Acertos: <span class="corretas"></span>
+        Erros: <span class="erradas"></span>
+      </div>
     </div>
-    <div class="contador">
-        Corretas: <span class="corretas">0</span>/
-        Erradas: <span class="erradas">0</span>
+    <div class="modal-finish">
+      <div class="contador">
+        Acertos: <span class="corretas"></span>
+        Erros: <span class="erradas"></span>
+      </div>
+      <img src="medusa.png" alt="Medusa" class="medusa">
     </div>
-  </main>
+    <img src="medusa.png" alt="Medusa" class="medusa">
+  </div>
 </body>
+
 </html>

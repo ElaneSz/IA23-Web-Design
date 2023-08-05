@@ -1,48 +1,59 @@
-const pergunta = document.querySelector(".pergunta")
-const alternativas = document.querySelector(".alternativas")
+const elQuiz = document.querySelector(".quiz")
+const elPergunta = elQuiz.querySelector(".pergunta")
+const elAlternativas = elQuiz.querySelector(".alternativas")
+const elContador = elQuiz.querySelector(".contador")
+const elCorretas = elContador.querySelector(".corretas")
+const elErradas = elContador.querySelector(".erradas")
 
-const contador = document.querySelector(".contador")
-const corretas = contador.querySelector(".corretas")
-const erradas = contador.querySelector(".erradas")
+const elModalFinish = document.querySelector(".modal-finish")
+const elContadorFinish = elModalFinish.querySelector(".contador")
+const elCorretasFinish = elContadorFinish.querySelector(".corretas")
+const elErradasFinish = elContadorFinish.querySelector(".erradas")
+
+const questionNumberSpan = document.querySelector(".current-question");
 
 async function main() {
   const requisicao = await fetch("questoes.json")
   const quiz = await requisicao.json()
   
-  let questaoAtual = 0
-  let alternativaCorretaAtual
   let nCorretas = 0
   let nErradas = 0
+  let questaoAtual = 0
+  let alternativaCorretaAtual
+
+  elCorretas.innerHTML = nCorretas
+  elErradas.innerHTML = nErradas
 
   function carregarQuestao(numeroDaQuestao) {
     const questao = quiz[numeroDaQuestao]
     alternativaCorretaAtual = questao.correta
-    pergunta.innerHTML = questao.pergunta
-
-    alternativas.innerHTML = ""
-    //quiz[0].alternativas.forEach(alt => alternativas.innerHTML += `<button>${alt}</button>`);
-    /*for (let i = 0; i <= 9; i++) {
-      alternativas.innerHTML += `<button>${alt.alternativas[i]}</button>`
-    }*/
+    elPergunta.innerText = questao.pergunta
+    elAlternativas.innerHTML = ""
     questao.alternativas.forEach(alt => {
-        alternativas.innerHTML += `<button>${alt}</button>`
-    });
-
+      elAlternativas.innerHTML += `<button>${alt}</button>`
+    })
   }
 
-  alternativas.addEventListener("click", ev => {
-    const botaoClicado = ev.target.closet("botton")
-    if (!botaoClicado)
-        return
+  elAlternativas.addEventListener("click", ev => {
+    const botaoClicado = ev.target.closest("button")
+    if (!botaoClicado) return
 
-    const listaDeFilhos = [...alternativas.children] // Posição dos botoes e convertendo o que achou, em array
-    const alternativaCorretaClicada = listaDeFilhos.indexOf(botaoClicado) // Com o valor eu encontro a posição do array
-    if (alternativaCorretaClicada == alternativaCorretaAtual)
-        nCorretas++
-        corretas.innerHTML = nCorretas
-        return carregarQuestao(++questaoAtual) // Carrega para a proxima questao
-    erradas.innerHTML = nErradas
+    const listaDeFilhos = [...elAlternativas.children]
+    const alternativaCorretaClicada = listaDeFilhos.indexOf(botaoClicado)
+
+    if (alternativaCorretaClicada == alternativaCorretaAtual) {
+      nCorretas++
+      elCorretas.innerHTML = nCorretas
+      if (questaoAtual == quiz.length-1) {
+        elCorretasFinish.innerHTML = nCorretas
+        elErradasFinish.innerHTML = nErradas
+        return elModalFinish.classList.add("open")
+      }
+      return carregarQuestao(++questaoAtual)
+    }
+    
     nErradas++
+    elErradas.innerHTML = nErradas
   })
 
   carregarQuestao(questaoAtual)
