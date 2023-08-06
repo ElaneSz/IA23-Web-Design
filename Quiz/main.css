@@ -81,6 +81,10 @@ body{
     margin-bottom: 5vh;
 }
 
+.numero {
+    margin-right: 15px;
+}
+
 .conteudo {
     display: flex;
     border-radius: 10px;

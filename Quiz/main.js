@@ -1,5 +1,6 @@
 const elQuiz = document.querySelector(".quiz")
 const elPergunta = elQuiz.querySelector(".pergunta")
+const elNumero = elQuiz.querySelector(".numero")
 const elAlternativas = elQuiz.querySelector(".alternativas")
 const elContador = elQuiz.querySelector(".contador")
 const elCorretas = elContador.querySelector(".corretas")
@@ -29,6 +30,7 @@ async function main() {
     alternativaCorretaAtual = questao.correta
     elPergunta.innerText = questao.pergunta
     elAlternativas.innerHTML = ""
+    elNumero.innerHTML = `<h1>(${questaoAtual+1})</h1>`
     questao.alternativas.forEach(alt => {
       elAlternativas.innerHTML += `<button>${alt}</button>`
     })
