@@ -14,9 +14,10 @@ const elErradasFinish = elContadorFinish.querySelector(".erradas")
 const questionNumberSpan = document.querySelector(".current-question");
 
 async function main() {
-  const requisicao = await fetch("questoes.json")
-  const quiz = await requisicao.json()
+  const requisicao = await fetch("questoes.json") // Realiza a requisição do arquivo '.json'
+  const quiz = await requisicao.json() // Converte para '.json'
   
+  // Variaveis globais
   let nCorretas = 0
   let nErradas = 0
   let questaoAtual = 0
@@ -25,26 +26,26 @@ async function main() {
   elCorretas.innerHTML = nCorretas
   elErradas.innerHTML = nErradas
 
-  function carregarQuestao(numeroDaQuestao) {
+  function carregarQuestao(numeroDaQuestao) { // Função que vai carregar as questoes do arquivo '.json'
     const questao = quiz[numeroDaQuestao]
     alternativaCorretaAtual = questao.correta
     elPergunta.innerText = questao.pergunta
     elAlternativas.innerHTML = ""
-    elNumero.innerHTML = `<h1>(${questaoAtual+1})</h1>`
+    elNumero.innerHTML = `<h1>(${questaoAtual+1})</h1>` // Acrescenta o numero da questao
     questao.alternativas.forEach(alt => {
-      elAlternativas.innerHTML += `<button>${alt}</button>`
+      elAlternativas.innerHTML += `<button>${alt}</button>` // Para cada alternativa se cria um botao
     })
   }
 
   elAlternativas.addEventListener("click", ev => {
-    const botaoClicado = ev.target.closest("button")
-    if (!botaoClicado) return
+    const botaoClicado = ev.target.closest("button") // Se for um botao ele continua o evento
+    if (!botaoClicado) return // Se nao for um botao ele para
 
-    const listaDeFilhos = [...elAlternativas.children]
-    const alternativaCorretaClicada = listaDeFilhos.indexOf(botaoClicado)
+    const listaDeFilhos = [...elAlternativas.children] // Metodo desconstrutor
+    const alternativaCorretaClicada = listaDeFilhos.indexOf(botaoClicado) // Cria um array de alternativas
 
-    if (alternativaCorretaClicada == alternativaCorretaAtual) {
-      nCorretas++
+    if (alternativaCorretaClicada == alternativaCorretaAtual) {  // Verificar se a alternativa clicada foi a correta
+      nCorretas++ // contabiliza o nº de alternativas clicadas que sao corretas | E adiciona +1
       elCorretas.innerHTML = nCorretas
       if (questaoAtual == quiz.length-1) {
         elCorretasFinish.innerHTML = nCorretas
@@ -58,7 +59,7 @@ async function main() {
     elErradas.innerHTML = nErradas
   })
 
-  carregarQuestao(questaoAtual)
+  carregarQuestao(questaoAtual) // Executa a função
 }
 
 main()
