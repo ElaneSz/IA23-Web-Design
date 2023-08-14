@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <style>
+        .modal {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0 0 0 / .5);
+            display: grid;
+            place-items: center;
+            transition: .3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .modal.opened {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal .window {
+            display: flex;
+            position: relative;
+            width: 50vw;
+            height: 50vh;
+            flex-direction: column;
+            background-color: white;
+            border-radius: 1vw;
+            padding: 1rem;
+        }
+
+        .modal .window .close {
+            position: absolute;
+            right: -1vw;
+            top: -1vw;
+            border: none;
+            font-size: 1vw;
+            width: 4vw;
+            height: 4vw;
+            padding: 1rem;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .modal .window .content {
+            flex: 1; /*Ocupa uma porção do pai | Neste caso, ele estica o maximo que pode*/
+        }
+
+        .modal .window .actions {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+
+    </style>
+</head>
+<body>
+    <button>AAAAAAAAA</button>
+    <div class="modal">
+        <div class="window">
+            <button class="close">X</button>
+            <div class="content">
+                <h1>Modal</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis quaerat qui molestias et sapiente vero, eligendi soluta similique non tenetur ipsum laborum? Minima maxime voluptate officia, voluptatum assumenda nesciunt voluptas?</p>
+            </div>
+            <div class="actions">
+                <button>OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const open = document.querySelector('button')
+        const modal = document.querySelector('.modal')
+        const close = modal.querySelector('.close')
+
+        open.addEventListener('click', () => {
+            modal.classList.add('opened')
+        })
+
+        close.addEventListener('click', () => {
+            modal.classList.remove('opened')
+        })
+
+        modal.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal')) {
+                modal.classList.remove('opened')
+            }
+        })
+    </script>
+</body>
+</html>
+
+<!--Fixade | IMPORTANTE-->
