@@ -1,22 +1,17 @@
 [
     {
-      "pergunta": "Qual a idade da 'Elane'?",
+      "pergunta": "Qual pertence à autora 'Caroline Andrade'?",
       "correta": 0,
-      "alternativas": [18, 17, 16, 15, 19, 20, 21, 22, 23, 24]
+      "alternativas": ["Sodoma", "Orgulho e Preconceito", "Pequeno Princepe", "2084", "A Falência", "1984", "Todas em Mim", "A Revolução do Bichos", "A Quarta Revolução Industrial", "Nebulosos"]
     },
     {
-      "pergunta": "Qual o livro favorito da 'Elane'?",
-      "correta": 0,
-      "alternativas": ["Sodoma", "Orgulho e Preconceito", "Pequeno Princepe", "Gomorra", "A Falência", "1984", "Todas em Mim", "A Revolução do Bichos", "A Quarta Revolução Industrial", "Nebulosos"]
-    },
-    {
-      "pergunta": "Qual o user da 'Elane'?",
+      "pergunta": "Qual destes pertence ao livro 'Sodoma'",
       "correta": 3,
-      "alternativas": ["001", "Medusa", "Afrodite", "Vênus", "k09", "br23", "Elane123", "E001", "W001", "G01"]
+      "alternativas": ["João", "Medusa", "Afrodite", "Ginger Fox", "Maria", "Michael", "Eva", "Salomé", "Pedro", "Alex"]
     },
     {
-      "pergunta": "Qual o dia do aniversário da 'Elane'?",
+      "pergunta": "O universo de 'Sodoma' tem quantas obras?",
       "correta": 0,
-      "alternativas": [23, 12, 11, 14, 15, 16, 27, 22, 9, 8]
+      "alternativas": [2, 3, 4, 5, 6, 1, 7, 8, 9, 10]
     }
   ]

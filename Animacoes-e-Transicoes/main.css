@@ -4,13 +4,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 /*Refatorar | Refazer algumas coisas*/
 :root {
-    --nav-background: #6c6cb3;
+    --nav-background: #c0c0ef;
     --nav-border: .5rem #2c2c54;
 }
 
 body {
     background-color: rgb(255, 255, 255);
     font-family: 'Roboto', sans-serif;
+    background-color: #CCBBFF;
+}
+
+.descricao {
+    border-radius: 45px 0;
+    margin-right: 15px;
+    background-color: #CCBBFF;
+    padding: 20px;
+}
+
+p {
+    text-align: justify;
+    text-indent: 20px;
+    font-size: 17px;
 }
 
 nav {
@@ -23,6 +37,7 @@ nav {
     justify-content: space-between; /*Coloca um no inicio e outro no fim | Coloca espaço entre os itens*/
     align-items: center;
     box-shadow: 0 0 7em rgb(113, 60, 156);
+    margin-bottom: 5px;
 }
 
 nav > ul {
@@ -88,12 +103,12 @@ nav > ul > li > ul a:visited {
 }
 
 main {
-    border: 2px solid black;
+    
+    background-color: #ffffff;
     padding: 1em;
 }
 
 div.galeria {
-    border: 5px solid lightseagreen;
     display: grid;
     grid-template-columns: repeat(5, 1fr); /*repeat(5 | quantidade de repetições, 1fr | Tamanho)*/
     grid-template-rows: repeat(3, 400px); /*Pro tamanho*/
@@ -102,6 +117,14 @@ div.galeria {
 
 div.galeria > div {
     background-color: #6c6cb3;
+}
+
+.img {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 div.galeria >:nth-child(1) {
@@ -124,8 +147,15 @@ div.galeria >:nth-child(3) {
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
+.secao {
+    display: flex;
+    background-color: #ffffff;
+    border-bottom: 2px solid #CCBBFF;
+    border-top: 2px solid #CCBBFF;
+}
+
 .modal-finish {
-    position: absolute;
+    position: fixed;
     inset: 0;
     background-color: #CCBBFF;
     color: #59429d;
@@ -174,7 +204,7 @@ div.galeria >:nth-child(3) {
     width: 85vh;
     height: 20vh;
     display: flex;
-    border-radius: 100px 0 0 0;
+    border-radius: 40px;
     justify-content: center;
     align-items: center;
     border-style: double;
@@ -184,13 +214,10 @@ div.galeria >:nth-child(3) {
 .conteudo {
     display: flex;
     border-radius: 10px;
-    border-style: double;
     padding-top: 5%;
     padding-bottom: 5%;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 7em rgb(113, 60, 156);
-    background-color: rgb(227, 214, 237);
 }
 
 .alternativas {
@@ -224,3 +251,43 @@ button:hover {
 button {
     cursor: pointer;
 }
+
+/*=================================================================*/
+
+.rodape{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    background-color: #ffffff;
+}
+
+footer > div > a {
+    text-decoration: none;
+}
+
+.mapa{
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+}
+
+.suporte{
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+}
+
+.img-rodape{
+    width: 50%;
+    right: 50%;
+}
+
+.img-footer {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
