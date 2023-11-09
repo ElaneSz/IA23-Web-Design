@@ -156,24 +156,22 @@ dialog:modal button {
     position: relative;
     isolation: isolate;
     overflow: hidden;
-
-    &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-color: blueviolet;
-        z-index: -1;
-        transform: translateY(100%);
-        transition: .3s;
-    }
-
-    &:focus,
-    &:hover {
-        &::before {
-            transform: translateY(0%);
-        }   
-    }
 }
+
+dialog:modal button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: blueviolet;
+    z-index: -1;
+    transform: translateY(100%);
+    transition: .3s;
+}
+
+dialog:modal button:focus::before,
+dialog:modal button:hover::before {
+        transform: translateY(0%);
+    }   
 
 dialog:modal .action {
     display: flex;
